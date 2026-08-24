@@ -6,24 +6,31 @@ A modern, high-end, responsive multi-page hospital website and secure client por
 
 ## 📸 Application Screenshots & Gallery
 
-The application includes multiple views spanning the public marketing portal, authentication flows, and the secure patient dashboard:
+Here is a quick look at the user interface and components:
 
-| Screenshot File | Description / View |
-| :--- | :--- |
-| `Screenshot_24-8-2026_22641_localho.png` | Localhost Development Environment / Homepage Overview |
-| `screenshot-1787601891671.png` | Hero & Emergency Action Banner |
-| `screenshot-1787601929853.png` | Find a Doctor Directory & Specialty Filters |
-| `screenshot-1787601946057.png` | Medical Services & Departments Grid |
-| `screenshot-1787601965784.png` | Appointment Booking Wizard (Step 1 & 2) |
-| `screenshot-1787602019906.png` | Patient Sign In / Authentication View |
-| `screenshot-1787602043325.png` | Patient Sign Up / Registration Form |
-| `screenshot-1787602059149.png` | Client Portal Overview & Welcome Banner |
-| `screenshot-1787602072534.png` | Health Metrics Tracker & Interactive Graphs |
-| `screenshot-1787602090889.png` | Upcoming Appointments & Status Management |
-| `screenshot-1787602118495.png` | Medical Records & Prescriptions Feed |
-| `screenshot-1787602137989.png` | Contact & Emergency Hotline Support View |
+| Localhost / Homepage Overview | Hero & Emergency Banner |
+| :---: | :---: |
+| ![Homepage](./screenshots/Screenshot_24-8-2026_22641_localho.png) | ![Hero & Emergency](./screenshots/screenshot-1787601891671.png) |
 
-*Note: All screenshots are stored locally under `C:\Users\lifer\Documents\godfrey-profile\med\screenshots\`.*
+| Find a Doctor Directory | Medical Services & Departments |
+| :---: | :---: |
+| ![Doctors](./screenshots/screenshot-1787601929853.png) | ![Services](./screenshots/screenshot-1787601946057.png) |
+
+| Appointment Booking Wizard | Patient Sign In / Authentication |
+| :---: | :---: |
+| ![Booking Wizard](./screenshots/screenshot-1787601965784.png) | ![Sign In](./screenshots/screenshot-1787602019906.png) |
+
+| Patient Sign Up Form | Client Portal Overview |
+| :---: | :---: |
+| ![Sign Up](./screenshots/screenshot-1787602043325.png) | ![Client Portal](./screenshots/screenshot-1787602059149.png) |
+
+| Health Metrics Tracker & Graphs | Upcoming Appointments Management |
+| :---: | :---: |
+| ![Health Metrics](./screenshots/screenshot-1787602072534.png) | ![Appointments](./screenshots/screenshot-1787602090889.png) |
+
+| Medical Records & Prescriptions | Emergency & Contact Support |
+| :---: | :---: |
+| ![Medical Records](./screenshots/screenshot-1787602118495.png) | ![Contact Support](./screenshots/screenshot-1787602137989.png) |
 
 ---
 
