@@ -1,69 +1,23 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, CalendarDays, ChevronDown, Clock3, HeartPulse, Menu, Phone, ShieldCheck, Stethoscope, X } from "lucide-react";
+import { useState } from "react";
+
+const services = [["01", "Primary care", "A steady partner for your everyday health.", HeartPulse], ["02", "Specialty care", "Deep expertise, thoughtfully coordinated.", Stethoscope], ["03", "Same-day care", "When life cannot wait for an appointment.", Clock3]];
+const faqs = [["How do I make an appointment?", "Book online in a few clicks, call our care team, or use your secure patient portal. We will help you find the right kind of care."], ["Do you accept my insurance?", "We work with most major insurance plans. Our team can verify your benefits before your first visit."], ["Can I see a doctor virtually?", "Yes. Many follow-ups and same-day consultations are available through secure video visits."]];
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState(0);
+  return <div className="min-h-screen overflow-hidden">
+     <main>
+      <section className="relative mx-auto grid max-w-[1240px] items-center gap-12 px-5 pb-20 pt-10 lg:grid-cols-[1fr_1.05fr] lg:px-8 lg:pb-28 lg:pt-16"><div className="relative z-10"><div className="eyebrow mb-6">Health care, with heart</div><h1 className="serif max-w-[620px] text-[clamp(3.3rem,6.3vw,6.25rem)] leading-[.95] tracking-[-.045em] text-[#102a43]">A better way to care for <em className="text-[#087ea4]">you.</em></h1><p className="mt-7 max-w-[470px] text-lg leading-8 text-[#627d98]">Expert medicine is only the beginning. We make space for your questions, your goals, and the life you want to get back to.</p><div className="mt-9 flex flex-wrap items-center gap-4"><Link href="/contact" className="flex items-center gap-3 rounded-full bg-[#087ea4] px-6 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#076b8b]">Start your care journey <ArrowRight size={17} /></Link><Link href="/services" className="flex items-center gap-2 px-3 py-3 text-sm font-semibold text-[#102a43]">Explore services <ArrowRight size={16} className="text-[#087ea4]" /></Link></div><div className="mt-14 flex items-center gap-4 border-t border-[#d9e8ed] pt-5"><div className="flex -space-x-2"><span className="h-8 w-8 rounded-full border-2 border-[#f7fbfc] bg-[#e2b49a]" /><span className="h-8 w-8 rounded-full border-2 border-[#f7fbfc] bg-[#9bb9b2]" /><span className="h-8 w-8 rounded-full border-2 border-[#f7fbfc] bg-[#b9a7ca]" /></div><p className="text-xs leading-5 text-[#627d98]"><strong className="text-[#102a43]">12,000+ people</strong> cared for<br />by our team this year</p></div></div><div className="relative"><div className="absolute -inset-8 -z-10 bg-[#e5f4f2] blur-3xl" /><div className="relative h-[480px] overflow-hidden rounded-[2rem] bg-[#d9e8e5] lg:h-[600px]"><div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85')] bg-cover bg-center" /><div className="absolute inset-0 bg-gradient-to-t from-[#102a43]/50 via-transparent to-transparent" /><div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-2xl border border-white/40 bg-white/85 p-4 backdrop-blur-md"><div><div className="flex items-center gap-2 text-xs font-semibold text-[#087ea4]"><span className="h-2 w-2 rounded-full bg-[#43b89d]" />CareFirst care team</div><p className="mt-1 text-sm font-medium text-[#102a43]">Here when you need us</p></div><ShieldCheck className="text-[#087ea4]" size={22} /></div></div><div className="absolute -left-5 top-12 hidden rounded-2xl bg-white p-4 shadow-xl sm:block"><div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-[#dff5ee] text-[#15866d]"><CalendarDays size={19} /></div><div className="text-[10px] uppercase tracking-wider text-[#829ab1]">Next opening</div><div className="mt-1 text-sm font-semibold text-[#102a43]">Today, 3:30 PM</div></div></div></section>
+      <section className="border-y border-[#d9e8ed] bg-white"><div className="mx-auto grid max-w-[1240px] px-5 lg:grid-cols-[.8fr_1.2fr] lg:px-8"><div className="flex items-center border-b border-[#d9e8ed] py-10 lg:border-b-0 lg:border-r lg:pr-12"><div><div className="eyebrow mb-3">Care, connected</div><h2 className="serif text-4xl leading-tight text-[#102a43]">Everything you need.<br /><em className="text-[#087ea4]">All in one place.</em></h2></div></div><div className="grid divide-y divide-[#d9e8ed] sm:grid-cols-3 sm:divide-x sm:divide-y-0">{services.map(([number, title, text, Icon]) => <Link href="/services" key={number} className="group p-7 transition hover:bg-[#f7fbfc] lg:p-9"><div className="flex items-center justify-between"><span className="text-xs text-[#9ab0c1]">{number}</span><Icon size={22} strokeWidth={1.5} className="text-[#087ea4] transition group-hover:scale-110" /></div><h3 className="mt-12 text-lg font-semibold text-[#102a43]">{title}</h3><p className="mt-2 text-sm leading-6 text-[#627d98]">{text}</p><ArrowRight className="mt-6 text-[#087ea4]" size={18} /></Link>)}</div></div></section>
+      <section id="about" className="grid-lines bg-[#eff7f7] px-5 py-20 lg:px-8 lg:py-28"><div className="mx-auto grid max-w-[1100px] items-end gap-12 lg:grid-cols-[1fr_1fr]"><div><div className="eyebrow mb-5">Why CareFirst</div><h2 className="serif max-w-[550px] text-5xl leading-[1.02] tracking-[-.04em] text-[#102a43]">Medicine is personal.<br /><span className="text-[#087ea4]">We keep it that way.</span></h2></div><div><p className="max-w-[430px] text-base leading-7 text-[#486581]">From your first hello to your follow-up plan, our people and technology work together to make health care feel more human.</p><div className="mt-10 grid grid-cols-3 gap-4 border-t border-[#c7dfe2] pt-5"><div><strong className="serif text-3xl text-[#102a43]">98%</strong><p className="mt-1 text-[11px] text-[#627d98]">patient satisfaction</p></div><div><strong className="serif text-3xl text-[#102a43]">24/7</strong><p className="mt-1 text-[11px] text-[#627d98]">care advice</p></div><div><strong className="serif text-3xl text-[#102a43]">35+</strong><p className="mt-1 text-[11px] text-[#627d98]">specialties</p></div></div></div></div></section>
+      <section className="mx-auto max-w-[1240px] px-5 py-20 lg:px-8 lg:py-28"><div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end"><div><div className="eyebrow mb-4">A little clarity</div><h2 className="serif text-5xl tracking-[-.04em] text-[#102a43]">Questions, answered.</h2></div><Link href="/contact" className="flex items-center gap-2 text-sm font-semibold text-[#087ea4]">Talk to our team <ArrowRight size={16} /></Link></div><div className="mt-12 divide-y divide-[#d9e8ed] border-y border-[#d9e8ed]">{faqs.map(([question, answer], index) => <div key={question}><button onClick={() => setOpenFaq(openFaq === index ? -1 : index)} className="flex w-full items-center justify-between py-6 text-left text-base font-semibold text-[#102a43]"><span>{question}</span><ChevronDown size={19} className={`text-[#087ea4] transition ${openFaq === index ? "rotate-180" : ""}`} /></button><AnimatePresence>{openFaq === index && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden"><p className="max-w-[650px] pb-6 text-sm leading-7 text-[#627d98]">{answer}</p></motion.div>}</AnimatePresence></div>)}</div></section>
+      <section className="bg-[#102a43] px-5 py-16 text-white lg:px-8"><div className="mx-auto flex max-w-[1100px] flex-col justify-between gap-8 sm:flex-row sm:items-center"><div><div className="mb-3 text-[11px] font-bold uppercase tracking-[.16em] text-[#73d5ba]">Ready when you are</div><h2 className="serif text-4xl">Your next chapter starts here.</h2></div><div className="flex flex-wrap gap-3"><Link href="/contact" className="flex items-center gap-2 rounded-full bg-[#73d5ba] px-5 py-3 text-sm font-semibold text-[#102a43]">Book an appointment <ArrowRight size={16} /></Link><a href="tel:18005550199" className="flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-semibold"><Phone size={16} /> 1 (800) 555-0199</a></div></div></section>
+    </main>
+    </div>;
 }

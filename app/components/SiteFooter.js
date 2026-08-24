@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function SiteFooter() { return <footer className="border-t border-[#d9e8ed] bg-[#f7fbfc] px-5 py-9 lg:px-8"><div className="mx-auto flex max-w-[1240px] flex-col justify-between gap-5 text-xs text-[#627d98] sm:flex-row"><span>© 2026 CareFirst Medical Center</span><div className="flex gap-6"><Link href="/contact">Contact</Link><Link href="/auth/signin">Patient portal</Link><span>Privacy & accessibility</span></div></div></footer> }
